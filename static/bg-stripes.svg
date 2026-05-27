@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <rect width="1600" height="900" fill="#1b283d"/>
+
+  <g opacity="0.45" transform="rotate(-45 800 450)">
+    <g>
+      <animateTransform
+        attributeName="transform"
+        type="translate"
+        from="-260 0"
+        to="260 0"
+        dur="18s"
+        repeatCount="indefinite" />
+
+      <rect x="-300" y="40" width="360" height="58" rx="29" fill="#6c93a0"/>
+      <rect x="150" y="40" width="340" height="58" rx="29" fill="#3d4d73"/>
+
+      <rect x="520" y="120" width="420" height="58" rx="29" fill="#597f91"/>
+      <rect x="1030" y="120" width="360" height="58" rx="29" fill="#33446b"/>
+
+      <rect x="-120" y="260" width="460" height="58" rx="29" fill="#33446b"/>
+      <rect x="430" y="260" width="350" height="58" rx="29" fill="#597f91"/>
+      <rect x="920" y="260" width="420" height="58" rx="29" fill="#3d4d73"/>
+
+      <rect x="90" y="420" width="400" height="58" rx="29" fill="#597f91"/>
+      <rect x="620" y="420" width="360" height="58" rx="29" fill="#33446b"/>
+      <rect x="1120" y="420" width="420" height="58" rx="29" fill="#6c93a0"/>
+
+      <rect x="-240" y="600" width="360" height="58" rx="29" fill="#6c93a0"/>
+      <rect x="270" y="600" width="420" height="58" rx="29" fill="#33446b"/>
+      <rect x="820" y="600" width="360" height="58" rx="29" fill="#597f91"/>
+
+      <rect x="80" y="780" width="420" height="58" rx="29" fill="#33446b"/>
+      <rect x="650" y="780" width="360" height="58" rx="29" fill="#6c93a0"/>
+      <rect x="1140" y="780" width="420" height="58" rx="29" fill="#3d4d73"/>
+    </g>
+  </g>
+</svg>
