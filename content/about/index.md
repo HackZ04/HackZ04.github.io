@@ -178,6 +178,31 @@ sharingLinks: false
     font-weight: 900;
   }
 
+.hack-intro-image {
+  display: flex;
+  justify-content: center;
+  margin: -1.2rem 0 2.4rem;
+}
+
+.hack-intro-image img {
+  display: block !important;
+  width: min(100%, 520px);
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 0 auto !important;
+  border-radius: 1.4rem;
+  object-fit: cover;
+  box-shadow:
+    0 24px 70px rgba(15, 23, 42, 0.16),
+    0 0 0 1px var(--ha-border);
+}
+
+html.dark .hack-intro-image img {
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.32),
+    0 0 0 1px var(--ha-border);
+}
+
   .hack-section {
     margin-top: 2.1rem;
   }
@@ -439,6 +464,9 @@ sharingLinks: false
       <p class="hack-intro">
         大家好，我是 <strong>HackZ04</strong>，欢迎来到我的窝点。
       </p>
+      <div class="hack-intro-image not-prose">
+        <img src="/img/intp-睡觉小熊猫.jpg" alt="睡觉小熊猫">
+      </div>
       <section class="hack-section">
         <h2 class="hack-heading">
           <span class="emoji">🎓</span>
