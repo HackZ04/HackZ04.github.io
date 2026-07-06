@@ -1,49 +1,8 @@
 /* 顶部导航栏 logo 圆形显示 */
 .main-menu img.logo {
-  width: 48px !important;
-  height: 48px !important;
+  width: 64px !important;
+  height: 64px !important;
 }
 
 
 
-/* 关于页：教育经历 */
-.education-section {
-  margin-top: 1rem;
-  font-size: 1.15rem;
-  line-height: 1.9;
-}
-
-.education-item {
-  position: relative;
-  margin: 0.5rem 0 0.8rem 1.2rem;
-}
-
-.education-item::before {
-  content: "•";
-  position: absolute;
-  left: -1.2rem;
-  color: #7dd3fc;
-  font-weight: bold;
-}
-
-.education-section .school,
-.education-section .degree {
-  font-weight: 700;
-  color: #2f7df6;
-}
-
-.education-section .school-cn {
-  font-weight: 700;
-  color: #7c3aed;
-}
-
-.education-section .college,
-.education-section .time {
-  font-style: italic;
-  color: #a78bfa;
-}
-
-.education-section .dash {
-  color: var(--tw-prose-body);
-  margin: 0 0.35rem;
-}
