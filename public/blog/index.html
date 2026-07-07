@@ -226,7 +226,7 @@
     
     
     "mainEntityOfPage": "true",
-    "wordCount": "131"
+    "wordCount": "87"
   }]
   </script>
 
@@ -692,32 +692,28 @@
   }
 
   .bloghub-thumb {
-    min-height: 128px;
-    border-radius: 1rem;
-    background:
-      radial-gradient(circle at 20% 18%, rgba(255, 255, 255, 0.88), transparent 18%),
-      linear-gradient(135deg, rgba(37, 99, 235, 0.22), rgba(139, 92, 246, 0.18)),
-      var(--bh-card-soft);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 0.9rem;
-    border: 1px solid var(--bh-border);
-  }
+  position: relative;
+  display: block;
+  min-height: 128px;
+  overflow: hidden;
+  border: 1px solid var(--bh-border);
+  border-radius: 1rem;
+  background: var(--bh-card-soft);
+}
 
-  .bloghub-index {
-    color: var(--bh-primary);
-    font-size: 1.75rem;
-    font-weight: 950;
-    letter-spacing: -0.05em;
-  }
+.bloghub-thumb img {
+  width: 100%;
+  height: 100%;
+  min-height: 128px;
+  aspect-ratio: 16 / 9;
+  display: block;
+  object-fit: cover;
+  transition: transform 280ms ease;
+}
 
-  .bloghub-topic {
-    color: var(--bh-muted);
-    font-size: 0.78rem;
-    font-weight: 800;
-    line-height: 1.35;
-  }
+.bloghub-card:hover .bloghub-thumb img {
+  transform: scale(1.045);
+}
 
   .bloghub-content {
     min-width: 0;
@@ -843,23 +839,33 @@
   </section>
   <section class="bloghub-list" aria-label="文章列表">
     <article class="bloghub-card">
-      <div class="bloghub-thumb" aria-hidden="true">
-        <span class="bloghub-index">01</span>
-        <span class="bloghub-topic">LLM Fine-tuning<br>Debug</span>
-      </div>
+      <a
+        class="bloghub-thumb"
+        href="https://blog.csdn.net/HackZ04/article/details/159461438"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="阅读 FSDP 和 QDoRA 微调 Llama-3.2 调试文章"
+      >
+        <img
+          class="nozoom"
+          src="/img/blog/FSDP+QDoRA微调Llama3.png"
+          alt="FSDP 和 QDoRA 微调 Llama-3.2 文章封面"
+        >
+      </a>
       <div class="bloghub-content">
         <div class="bloghub-tags">
           <span class="bloghub-tag">FSDP</span>
           <span class="bloghub-tag">QDoRA</span>
           <span class="bloghub-tag">Llama-3.2</span>
+          <span class="bloghub-tag">大模型微调</span>
         </div>
         <h3>
           <a href="https://blog.csdn.net/HackZ04/article/details/159461438" target="_blank" rel="noopener noreferrer">
-            〖DEBUG〗FSDP+QDoRA 微调 Llama-3.2 时反向传播阶段梯度全为 0、Loss 不变的问题
+            【DEBUG】FSDP+QDoRA微调Llama-3.2时反向传播阶段梯度全为0、Loss不变的问题
           </a>
         </h3>
         <p class="bloghub-summary">
-          记录 FSDP+QDoRA 微调 Llama-3.2-1B 时 Loss 不变、梯度为 0 的问题定位过程，并给出权重绑定相关的修复思路。
+          记录了基于FSDP+QDoRA微调Llama-3.2-1B时，训练Loss始终不变、反向传播梯度全为0的问题。经分析发现，根因是Llama-3.2启用tie_word_embeddings=true后，在init_empty_weights()与load_and_quantize流程中，lm_head与embed_tokens原本共享的权重绑定被破坏，导致Loss计算图与LoRA可训练参数断开。
         </p>
         <div class="bloghub-footer">
           <span class="bloghub-date">Published · 2026.03.25</span>
@@ -870,23 +876,34 @@
       </div>
     </article>
     <article class="bloghub-card">
-      <div class="bloghub-thumb" aria-hidden="true">
-        <span class="bloghub-index">02</span>
-        <span class="bloghub-topic">Multi-Object<br>Tracking</span>
-      </div>
+      <a
+        class="bloghub-thumb"
+        href="https://blog.csdn.net/HackZ04/article/details/157032378"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="阅读多目标追踪模型对比文章"
+      >
+        <img
+          class="nozoom"
+          src="/img/blog/多目标追踪.png"
+          alt="DeepSORT、BoTSORT、ByteTrack 和 StrongSORT 多目标追踪文章封面"
+        >
+      </a>
       <div class="bloghub-content">
         <div class="bloghub-tags">
           <span class="bloghub-tag">DeepSORT</span>
           <span class="bloghub-tag">ByteTrack</span>
           <span class="bloghub-tag">MOT16</span>
+          <span class="bloghub-tag">目标追踪</span>
+          <span class="bloghub-tag">计算机视觉</span>
         </div>
         <h3>
           <a href="https://blog.csdn.net/HackZ04/article/details/157032378" target="_blank" rel="noopener noreferrer">
-            〖深度学习&amp;计算机视觉〗DeepSORT、BoTSORT、ByteTrack、StrongSORT 多目标追踪，参数设置、模型对比
+            【深度学习&计算机视觉】DeepSORT、BoTSORT、ByteTrack、StrongSORT多目标追踪，参数设置、模型对比，学习必看——基于MOT16数据集
           </a>
         </h3>
         <p class="bloghub-summary">
-          基于 MOT16 数据集，对多目标追踪算法进行原理梳理、参数设置和模型对比，适合用于目标追踪任务入门与实验复现。
+          基于MOT16数据集，对多目标追踪算法进行原理梳理、参数设置和模型对比，适合用于目标追踪任务入门与实验复现。
         </p>
         <div class="bloghub-footer">
           <span class="bloghub-date">Published · 2026.01.16</span>
@@ -897,23 +914,34 @@
       </div>
     </article>
     <article class="bloghub-card">
-      <div class="bloghub-thumb" aria-hidden="true">
-        <span class="bloghub-index">03</span>
-        <span class="bloghub-topic">Instance<br>Segmentation</span>
-      </div>
+      <a
+        class="bloghub-thumb"
+        href="https://blog.csdn.net/HackZ04/article/details/156983582"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="阅读 YOLO 和 U-Net 实例分割文章"
+      >
+        <img
+          class="nozoom"
+          src="/img/blog/实例分割.png"
+          alt="YOLO 和 U-Net 实例分割文章封面"
+        >
+      </a>
       <div class="bloghub-content">
         <div class="bloghub-tags">
           <span class="bloghub-tag">YOLO</span>
           <span class="bloghub-tag">U-Net</span>
           <span class="bloghub-tag">Crack-seg</span>
+          <span class="bloghub-tag">实例分割</span>
+          <span class="bloghub-tag">计算机视觉</span>
         </div>
         <h3>
           <a href="https://blog.csdn.net/HackZ04/article/details/156983582" target="_blank" rel="noopener noreferrer">
-            〖深度学习&amp;计算机视觉〗YOLO &amp; U-Net 实例分割，参数设置、模型对比
+            【深度学习&计算机视觉】YOLO & U-Net实例分割，学习必看，参数设置、模型对比——基于YOLOv8、v11和U-Net、U-Net++的Crack-seg实例分割
           </a>
         </h3>
         <p class="bloghub-summary">
-          基于 Crack-seg 数据集，对 YOLOv8、YOLOv11、U-Net 和 U-Net++ 进行实例分割实验，并整理模型配置与对比结果。
+          基于Crack-seg数据集，对YOLOv8、YOLOv11、U-Net和U-Net++进行实例分割实验，并整理模型配置与对比结果。
         </p>
         <div class="bloghub-footer">
           <span class="bloghub-date">Published · 2026.01.15</span>
@@ -924,23 +952,34 @@
       </div>
     </article>
     <article class="bloghub-card">
-      <div class="bloghub-thumb" aria-hidden="true">
-        <span class="bloghub-index">04</span>
-        <span class="bloghub-topic">Object<br>Detection</span>
-      </div>
+      <a
+        class="bloghub-thumb"
+        href="https://blog.csdn.net/HackZ04/article/details/156947057"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="阅读 YOLO 目标检测模型对比文章"
+      >
+        <img
+          class="nozoom"
+          src="/img/blog/目标检测.png"
+          alt="YOLO 和 RT-DETR 目标检测文章封面"
+        >
+      </a>
       <div class="bloghub-content">
         <div class="bloghub-tags">
           <span class="bloghub-tag">YOLOv8</span>
           <span class="bloghub-tag">YOLOv12</span>
           <span class="bloghub-tag">RT-DETR</span>
+          <span class="bloghub-tag">目标检测</span>
+          <span class="bloghub-tag">计算机视觉</span>
         </div>
         <h3>
           <a href="https://blog.csdn.net/HackZ04/article/details/156947057" target="_blank" rel="noopener noreferrer">
-            〖深度学习&amp;计算机视觉〗YOLO 目标检测，参数设置、模型对比
+            【深度学习&计算机视觉】YOLO目标检测，学习必看，参数设置、模型对比——基于YOLOv8、v11、v12和RT-DERT的HomeObjects-3K目标检测
           </a>
         </h3>
         <p class="bloghub-summary">
-          基于 HomeObjects-3K 数据集，对 YOLOv8、YOLOv11、YOLOv12 与 RT-DETR 进行目标检测实验，整理超参数设置与对比分析。
+          基于HomeObjects-3K数据集，对YOLOv8、YOLOv11、YOLOv12与RT-DETR进行目标检测实验，整理超参数设置与对比分析。
         </p>
         <div class="bloghub-footer">
           <span class="bloghub-date">Published · 2026.01.14</span>
@@ -951,23 +990,34 @@
       </div>
     </article>
     <article class="bloghub-card">
-      <div class="bloghub-thumb" aria-hidden="true">
-        <span class="bloghub-index">05</span>
-        <span class="bloghub-topic">Image<br>Classification</span>
-      </div>
+      <a
+        class="bloghub-thumb"
+        href="https://blog.csdn.net/HackZ04/article/details/156868579"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="阅读 CIFAR-100 多模型图像分类文章"
+      >
+        <img
+          class="nozoom"
+          src="/img/blog/图像分类.png"
+          alt="CIFAR-100 多模型图像分类文章封面"
+        >
+      </a>
       <div class="bloghub-content">
         <div class="bloghub-tags">
           <span class="bloghub-tag">CIFAR-100</span>
           <span class="bloghub-tag">ResNet</span>
           <span class="bloghub-tag">ViT</span>
+          <span class="bloghub-tag">图像分类</span>
+          <span class="bloghub-tag">计算机视觉</span>
         </div>
         <h3>
           <a href="https://blog.csdn.net/HackZ04/article/details/156868579" target="_blank" rel="noopener noreferrer">
-            〖深度学习&amp;计算机视觉〗CIFAR-100 多模型图像分类，参数设置、模型对比
+            【深度学习&计算机视觉】学习必看，参数设置、模型对比，Cifar100多模型图像分类——ResNet、VGG、DenseNet、ViT，附源码
           </a>
         </h3>
         <p class="bloghub-summary">
-          基于 CIFAR-100 数据集，实现 ResNet、VGG、DenseNet 和 Vision Transformer 等图像分类模型，并进行系统对比。
+          基于CIFAR-100数据集，实现ResNet、VGG、DenseNet和Vision Transformer等图像分类模型，并进行系统对比。
         </p>
         <div class="bloghub-footer">
           <span class="bloghub-date">Published · 2026.01.12</span>
