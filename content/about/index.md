@@ -474,7 +474,7 @@ html.dark .hack-intro-image img {
           <span class="hack-heading-line"></span>
         </h2>
         <div class="hack-card">
-          <p>中国石油大学（华东）软件工程专业本科毕业，获荣誉学士、优秀毕业生称号，第29期青马工程骨干培训班优秀结业。本科期间曾获青岛中加特奖学金、综合优秀奖学金一等奖、创新创业奖学金、文体奖学金等，多次获评优秀学生干部、优秀学生、优秀共青团员。</p>
+          <p>中国石油大学（华东）软件工程专业本科毕业，获荣誉学士、优秀毕业生称号，第29期青马工程骨干培训班优秀结业。本科期间曾获青岛中加特奖学金、综合优秀奖学金一等奖、科技创新奖学金、文体奖学金等，多次获评优秀学生干部、优秀学生、优秀共青团员。</p>
         </div>
       </section>
       <section class="hack-section">
@@ -507,9 +507,11 @@ html.dark .hack-intro-image img {
         </h2>
         <ul class="hack-list">
           <li>
-            <span class="hack-paper-title">
-              MGAL: A Multilingual Granularity-Aware Long-Context Benchmark
-            </span>
+            <a href="https://icml.cc/virtual/2026/poster/66350" target="_blank">
+              <span class="hack-paper-title">
+                MGAL: A Multilingual Granularity-Aware Long-Context Benchmark
+              </span>
+            </a>
             <span class="hack-muted">（ICML 2026,CCF-A）</span>
             <span class="hack-authors">
               Chunhan Li, Chenglin Xu, <strong>Zongyang Zhang</strong>, Jiale Liu, Zhuoxi Rao,
